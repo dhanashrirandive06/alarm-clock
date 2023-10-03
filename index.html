@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Alarm Clock</title>
+
+    <!-- favicon  -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/icon.png" />
+    <!-- External stylesheet link-->
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <main class="main">
+        <!-- Clock Container -->
+        <div class="container">
+            <!-- Clock face -->
+            <div class="clock-face animate">
+                <div class="clock-face_heading" id="clock-face_heading">
+                    <!-- Current Time will appear dynamically from index.js file here -->
+                </div>
+            </div>
+
+            <!-- Set Alarm -->
+            <div class="set-alarm">
+                <div class="set-alarm_input">
+                    <input type="number" value="00" min="0" max="23" id="set_hours" /><span>:</span>
+                    <input type="number" value="00" min="0" max="59" id="set_minutes" /><span>:</span>
+                    <input type="number" value="00" min="0" max="59" id="set_seconds" /><span>:</span>
+
+                    <select required name="set_am_pm" id="set_am_pm" class="set-alarm_input_text">
+                        <option value="AM" class="set-alarm_input_text">AM</option>
+                        <option value="PM" class="set-alarm_input_text">PM</option>
+                    </select>
+                </div>
+
+                <button class="set_alarm_btn" onclick="set_alarm()">SET ALARM</button>
+            </div>
+
+            <!--Set Alarms -->
+            <div class="alarm-list">
+                <h2>Alarms</h2>
+                <div class="alarm-list_container">
+                    <!-- set alarms will be dynamically append here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Javascript file link -->
+    <script src="./index.js" type="text/javascript"></script>
+</body>
+
+</html>
