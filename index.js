@@ -6,17 +6,23 @@ let am_pm_value = "AM";
 // array to store new alarm
 const current_set_alarms = [];
 
-//currentDate function gives time every second
-const currentDate = () => {
+//currentTime function gives time every second
+const currentTime = () => {
   const current = new Date();
 
   //get separate value of hours, minutes and seconds from current time
+
+  //get hours
   let current_hours = current.getHours();
   am_pm_value = current_hours >= 12 ? "PM" : "AM";
+
   current_hours = current_hours >= 10 ? current_hours : "0" + current_hours;
+  //get minutes
   let current_minutes = current.getMinutes();
   current_minutes =
     current_minutes < 10 ? "0" + current_minutes : current_minutes;
+
+  //get seconds
   let current_seconds = current.getSeconds();
   current_seconds =
     current_seconds < 10 ? "0" + current_seconds : current_seconds;
@@ -42,8 +48,8 @@ const currentDate = () => {
     am_pm_value;
 };
 
-//call current date function every second
-setInterval(currentDate, 1000);
+//call current time function every second
+setInterval(currentTime, 1000);
 
 //Show alarms
 const showAlarm = () => {
@@ -116,7 +122,7 @@ setInterval(() => {
     if (element === current_time) {
       let index = current_set_alarms.indexOf(element);
       current_set_alarms.splice(index, 1);
-      alert("Alarm done");
+      alert("Turn off Alarm!!!");
       showAlarm();
     }
   });
